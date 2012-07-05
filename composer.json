@@ -1,0 +1,20 @@
+{
+	"name": "mdx-dev/li3_newrelic",
+	"type": "lithium-library",
+	"description": "A Lithium PHP pluginto allow for template inheritance. It's slick.",
+	"keywords": ["lithium", "li3", "newrelic", "monitoring"],
+	"homepage": "https://github.com/mdx-dev/li3_newrelic/blob/master/README.md",
+	"license": "The BSD License",
+	"authors": [
+		{
+			"name": "Nathan Phelps",
+			"email": "nathan.phelps@vitals.com",
+			"homepage": "https://github.com/mdx-dev"
+		}
+	],
+
+	"require": {
+		"composer/installers": "*"
+	}
+
+}
