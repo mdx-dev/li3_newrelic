@@ -1,7 +1,7 @@
 {
 	"name": "mdx-dev/li3_newrelic",
 	"type": "lithium-library",
-	"description": "A Lithium PHP pluginto allow for template inheritance. It's slick.",
+	"description": "A Lithium PHP plug for New Relic",
 	"keywords": ["lithium", "li3", "newrelic", "monitoring"],
 	"homepage": "https://github.com/mdx-dev/li3_newrelic/blob/master/README.md",
 	"license": "The BSD License",
