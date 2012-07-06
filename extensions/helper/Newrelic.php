@@ -3,6 +3,7 @@
 namespace li3_newrelic\extensions\helper;
 
 use \lithium\template\Helper;
+use \lithium\core\Environment;
 
 class Newrelic extends Helper {
 
