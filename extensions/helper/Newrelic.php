@@ -25,7 +25,7 @@ class Newrelic extends Helper {
 	 */
 	public function footer($includeScriptTag = true) {
 		if (Environment::is('production') && extension_loaded ('newrelic')) {
-		    newrelic_get_browser_timing_footer($includeScriptTag);
+		    return newrelic_get_browser_timing_footer($includeScriptTag);
 		}
 	}
 }
