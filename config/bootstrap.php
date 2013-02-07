@@ -1,18 +1,20 @@
 <?php
 
+namespace li3_newrelic\config;
+
 use lithium\core\Libraries;
 use lithium\action\Dispatcher;
 use lithium\core\Environment;
+use li3_newrelic\extensions\Newrelic;
 
+/**
+ * Main filter to add newrelic transaction for each request.
+ */
 Dispatcher::applyFilter('_callable', function($self, $params, $chain) {
 
 	$controller = $chain->next($self, $params, $chain);
 
-	if (Environment::is('production') && extension_loaded('newrelic')) {
-		$ctrl = explode('\\', get_class($controller));
-		$controllerName = preg_replace('/Controller$/', '', array_pop($ctrl));
-		newrelic_name_transaction($controllerName . '/' . $params['request']->params['action']);
-	}
+	Newrelic::filterDispatcher($controller, $params);
 
 	return $controller;
 });
