@@ -13,7 +13,7 @@ class Newrelic extends Helper {
 	 * @return mixed
 	 */
 	public function header($includeScriptTag = true) {
-		if (Environment::is('production') && extension_loaded ('newrelic')) {
+		if (extension_loaded('newrelic')) {
 		  return newrelic_get_browser_timing_header($includeScriptTag);
 		}
 	}
@@ -24,8 +24,8 @@ class Newrelic extends Helper {
 	 * @return mixed
 	 */
 	public function footer($includeScriptTag = true) {
-		if (Environment::is('production') && extension_loaded ('newrelic')) {
-		    return newrelic_get_browser_timing_footer($includeScriptTag);
+		if (extension_loaded('newrelic')) {
+		  return newrelic_get_browser_timing_footer($includeScriptTag);
 		}
 	}
 }
