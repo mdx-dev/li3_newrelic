@@ -26,8 +26,7 @@ class Newrelic extends StaticObject {
 	 */
 	public static function __callStatic($method, array $params = array()) {
 		if (static::shouldRun()) {
-			call_user_func_array($function = "newrelic_{$method}", $params);
-			return $function;
+			return call_user_func_array("newrelic_{$method}", $params);
 		}
 		return false;
 	}

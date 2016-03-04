@@ -59,9 +59,11 @@ class NewrelicTest extends Unit {
 		NewrelicMock::applyFilter('shouldRun', function($self, $params, $chain) {
 			return true;
 		});
-		Mocker::overwriteFunction('li3_newrelic\extensions\call_user_func_array', function() {
-			return;
+
+		Mocker::overwriteFunction('li3_newrelic\extensions\call_user_func_array', function($function_name) {
+			return $function_name;
 		});
+
 		$result = NewrelicMock::custom_metric();
 
 		$this->assertIdentical('newrelic_custom_metric', $result);
